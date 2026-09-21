@@ -1,55 +1,45 @@
 import './App.css'
 
-const Header = (props) => {
-  return <h1>{props.course}</h1>
-}
-
-const Content = (props) => {
-  return (
-    <div>
-      <hr></hr>
-      <p>
-        {props.subject1} 
-        <br />Units:{props.units1}
-      </p>
-      <p>
-        {props.subject2} 
-        <br />Units:{props.units2}
-      </p>
-      <p>
-        {props.subject3} 
-        <br />Units:{props.units3}
-      </p>
-      <hr/>
-    </div>
-  )
-}
 
 const Total = (props) => {
   return <p>Total Amount of Units {props.total}</p>
 }
 
 const App = () => {
+
   const course = 'Bachelor of Information Technology'
-  const subject1 = 'Industry Electives'
-  const units1 = 3
-  const subject2 = 'Project Management'
-  const units2 = 3
-  const subject3 = 'Data Analytics'
-  const units3 = 3
+  const subject1 = {
+    name: 'Industry Electives',
+    units: 3
+  }
+  const subject2 = {
+    name: 'Project Management',
+    units: 3
+  }
+  const subject3 = {
+    name: 'Data Analytics',
+    units: 3
+  }
+
+  const total = subject1.units + subject2.units + subject3.units
+
+  
+
 
   return (
     <div>
-      <Header course={course} />
-      <Content
-        subject1={subject1}
-        units1={units1}
-        subject2={subject2}
-        units2={units2}
-        subject3={subject3}
-        units3={units3}
-      />
-      <Total total={units1 + units2 + units3} />
+      <h1>{course}</h1>
+      <hr/>
+      <p>{subject1.name}<br/>
+      Units: {subject1.units}</p>
+      <p>{subject2.name}<br/>
+      Units: {subject2.units}</p>
+      <p>{subject3.name}<br/>
+      Units: {subject3.units}</p>
+      <hr/>
+      <p>Total Amount of Units: {total}</p>
+
+
     </div>
   )
   
