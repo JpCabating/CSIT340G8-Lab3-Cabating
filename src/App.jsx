@@ -26,7 +26,7 @@ const Content = (props) => {
 }
 
 const Total = (props) => {
-  return <p>Total Number of Units {props.total}</p>
+  return <p>Total Amount of Units {props.total}</p>
 }
 
 const App = () => {
